@@ -8,8 +8,8 @@ export interface envTypes {
 
 export class Server {
   #app = express();
-  readonly #public_path: string;
   readonly #server_port: number;
+  readonly #public_path: string;
 
   constructor(envOptions: envTypes) {
     const { public_path, server_port } = envOptions;
@@ -25,9 +25,9 @@ export class Server {
 
     this.#app.get("*", (req, res) => {
       console.log(
-        path.join(__dirname, `../../${this.#server_port}/index.html`)
+        path.join(__dirname, `../../${this.#public_path}/index.html`)
       );
-      res.sendFile(this.#public_path || "index.html");
+      res.sendFile(this.#public_path);
     });
 
     //Middlewares
