@@ -27,7 +27,9 @@ export class Server {
       console.log(
         path.join(__dirname, `../../${this.#public_path}/index.html`)
       );
-      res.sendFile(this.#public_path);
+      res.sendFile(
+        path.join(__dirname, `../../${this.#public_path}/index.html`)
+      );
     });
 
     //Middlewares
