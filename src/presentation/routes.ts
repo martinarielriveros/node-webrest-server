@@ -10,12 +10,6 @@ export class AppRoutes {
 
     router.use("/api/todos", TodoRoutes.routes);
 
-    router.get("*", (req, res) => {
-      res.sendFile(
-        path.join(__dirname, `../../${envs.public_path}/index.html`)
-      );
-    });
-
     // router has all the routes defined that should be used by the application
     return router;
   }
