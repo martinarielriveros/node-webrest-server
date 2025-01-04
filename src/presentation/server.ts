@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import path from "path";
 
 export interface Options {
   server_port: number;
@@ -27,6 +28,13 @@ export class Server {
     this.#app.use(express.static(this.#public_path));
     //* Routes
     this.#app.use(this.#routes);
+
+    this.#app.get("*", (req, res) => {
+      const indexPath = path.join(
+        __dirname + `../../../${this.#public_path}/index.html`
+      );
+      res.sendFile(indexPath);
+    });
 
     this.#app.listen(this.#server_port, () =>
       console.log(`listening on port ${this.#server_port}`)
