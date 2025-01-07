@@ -20,7 +20,7 @@ export class Server {
     this.#routes = routes;
   }
   async start() {
-    //* Middlewares
+    //* Built-in Middlewares
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));
 
