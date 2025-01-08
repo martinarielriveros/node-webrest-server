@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { prisma } from "../../data/postgres";
+import { prisma } from "../../data";
 import { CreateTodoDto } from "../../domain/dtos/todos/create-todo.dto";
 
 export class TodosController {
