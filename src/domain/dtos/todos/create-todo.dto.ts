@@ -18,7 +18,7 @@ export class CreateTodoDto {
     }
 
     //* There’s no "date" type returned by typeof, because typeof new Date() returns "object".
-    console.log(new Date(completedAt));
+
     if (new Date(completedAt).toString() == "Invalid Date") {
       return ["completedAt property must be a date"];
     }
