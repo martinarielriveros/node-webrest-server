@@ -54,3 +54,13 @@ If you already have a **.env** file in your project, Prisma will not overwrite i
 
 Append any missing environment variables that are required for Prisma, such as **DATABASE_URL**.
 If **DATABASE_URL** already exists in your **.env** file, it will leave it unchanged.
+
+## Note
+
+Remember to create an instance of a PostgreSQL database at https://console.neon.tech/
+
+As a result you need to create an env variable that looks (somthing) like:
+
+```Typescript
+POSTGRES_URL=postgresql://neondb_owner:***********@**********.us-east-2.aws.neon.tech/neondb?sslmode=require
+```
